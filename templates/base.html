@@ -1,0 +1,73 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}Watch2Gether{% endblock %}</title>
+
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+
+<body>
+
+    <header class="navbar">
+
+        <div class="navbar-container">
+
+            <a href="/" class="logo">
+                Watch<span>2</span>Gether
+            </a>
+
+            <nav class="nav-links">
+                <a href="/">Home</a>
+                <a href="#">Movies</a>
+                <a href="#">Genres</a>
+                <a href="#">About</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="#" class="login-btn">Login</a>
+                <a href="#" class="signup-btn">Sign Up</a>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <div>
+                <h2>Watch<span>2</span>Gether</h2>
+                <p>
+                    Find movies you'll love.
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <a href="#">Home</a>
+                <a href="#">Movies</a>
+                <a href="#">About</a>
+            </div>
+
+        </div>
+
+        <p class="copyright">
+            © 2026 Watch2Gether. All rights reserved.
+        </p>
+
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,124 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Register | Watch2Gether</title>
+
+    <link rel="stylesheet" href="{% static 'css/auth.css' %}" />
+    </head>
+
+    <body>
+    <div class="auth-page">
+        <div class="auth-card">
+        <a href="/" class="logo"> Watch<span>2</span>Gether </a>
+
+        <div class="auth-heading">
+            <h1>Create your account</h1>
+            <p>Join Watch2Gether and discover movies you'll love.</p>
+        </div>
+
+        {% if error %}
+        <div class="error-message">{{ error }}</div>
+        {% endif %}
+
+        <form method="POST">
+            {% csrf_token %}
+
+            <div class="name-row">
+            <div class="form-group">
+                <label for="first_name"> First name </label>
+
+              <input
+                type="text"
+                id="first_name"
+                name="first_name"
+                maxlength="64"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="last_name"> Last name </label>
+
+              <input
+                type="text"
+                id="last_name"
+                name="last_name"
+                maxlength="64"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="age"> Age </label>
+
+            <input
+              type="number"
+              id="age"
+              name="age"
+              min="1"
+              max="120"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="username"> Username </label>
+
+            <input type="text" id="username" name="username" required />
+          </div>
+
+          <div class="form-group">
+            <label for="language"> Languages </label>
+
+<select id="languages" name="languages" multiple>
+
+    <option value="english" selected>English</option>
+    <option value="french">French</option>
+    <option value="italian">Italian</option>
+    <option value="russian">Russian</option>
+    <option value="spanish">Spanish</option>
+    <option value="persian">Persian</option>
+
+</select>
+
+              <small> Select one or more languages. </small>
+            </div>
+
+            <small> Hold Ctrl and select multiple languages. </small>
+          </div>
+
+          <div class="form-group">
+            <label for="password"> Password </label>
+
+            <input type="password" id="password" name="password" required />
+          </div>
+
+          <div class="form-group">
+            <label for="confirm_password"> Confirm password </label>
+
+            <input
+              type="password"
+              id="confirm_password"
+              name="confirm_password"
+              required
+            />
+          </div>
+
+          <button type="submit" class="auth-button">Create account</button>
+        </form>
+
+        <p class="auth-switch">
+          Already have an account?
+
+          <a href="{% url 'sign_in' %}"> Sign in </a>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
