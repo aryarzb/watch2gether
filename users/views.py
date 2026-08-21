@@ -47,5 +47,5 @@ def sign_in(request):
             login(request, user)
             return redirect("home")
         else:
-            return render(request, "users/login.html")
-    return render(request, "users/login.html")
+            return render(request, "show/home.html")
+    return render(request, "show/home.html")

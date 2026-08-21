@@ -229,3 +229,252 @@ body {
         gap: 0;
     }
 }
+
+.language-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.language-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 14px 16px;
+
+    background: #181818;
+    border: 1px solid #333;
+    border-radius: 8px;
+
+    color: #ddd;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.language-option:hover {
+    border-color: #666;
+    background: #202020;
+}
+
+.language-option .check {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 20px;
+    height: 20px;
+
+    border: 1px solid #555;
+    border-radius: 5px;
+
+    color: transparent;
+
+    font-size: 13px;
+
+    transition: 0.2s ease;
+}
+
+.language-option.selected {
+    border-color: #ed0712;
+    background: #211010;
+}
+
+.language-option.selected .check {
+    background: #ed0712;
+    border-color: #ed0712;
+    color: white;
+}
+
+/* =========================
+   Languages
+========================= */
+
+.language-selector {
+    min-height: 54px;
+    width: 100%;
+    box-sizing: border-box;
+
+    border: 1px solid #333;
+    border-radius: 8px;
+
+    background: #171717;
+
+    display: flex;
+    align-items: center;
+
+    padding: 8px 14px;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease;
+
+    position: relative;
+}
+
+.language-selector:hover {
+    border-color: #555;
+}
+
+.language-selector.active {
+    border-color: #777;
+}
+
+
+/* Selected languages */
+
+.language-selected {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+
+    padding-right: 30px;
+
+    width: 100%;
+}
+
+.language-placeholder {
+    color: #777;
+    font-size: 15px;
+}
+
+
+/* Language chips */
+
+.language-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    padding: 6px 10px;
+
+    border-radius: 6px;
+
+    background: #252525;
+    border: 1px solid #3a3a3a;
+
+    color: #f1f1f1;
+
+    font-size: 14px;
+}
+
+
+/* Arrow */
+
+.language-arrow {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #888;
+    font-size: 20px;
+
+    pointer-events: none;
+
+    transition: transform 0.2s ease;
+}
+
+.language-selector.active .language-arrow {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+
+/* Dropdown */
+
+.language-dropdown {
+    display: none;
+
+    margin-top: 6px;
+
+    width: 100%;
+    box-sizing: border-box;
+
+    background: #171717;
+
+    border: 1px solid #333;
+    border-radius: 8px;
+
+    padding: 6px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+
+    position: absolute;
+
+    z-index: 20;
+}
+
+.form-group {
+    position: relative;
+}
+
+.language-dropdown.open {
+    display: block;
+}
+
+
+/* Options */
+
+.language-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 11px 12px;
+
+    border-radius: 6px;
+
+    color: #ddd;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.15s ease,
+        color 0.15s ease;
+}
+
+.language-option:hover {
+    background: #252525;
+    color: white;
+}
+
+
+/* Selected option */
+
+.language-option.selected {
+    background: #222;
+    color: white;
+}
+
+.language-option .check {
+    opacity: 0;
+
+    font-size: 16px;
+
+    color: #fff;
+}
+
+.language-option.selected .check {
+    opacity: 1;
+}
+
+
+/* Helper text */
+
+.form-group small {
+    display: block;
+
+    margin-top: 7px;
+
+    color: #666;
+
+    font-size: 13px;
+}
